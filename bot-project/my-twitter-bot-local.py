@@ -1,7 +1,7 @@
 #coding: utf-8
 #天気速報Bot
 #ファイル書き込みもしたい
-#herokuに任せたい
+#herokuのタイムスケジューラー使うか、60秒制限みたいなのを伸ばすか
 
 from crontab import CronTab
 from datetime import datetime, timedelta
