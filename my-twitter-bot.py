@@ -16,7 +16,7 @@ import time
 import requests
 import json
 import twitter
-import myconf
+#import myconf
 import os
 
 auth = twitter.OAuth(
