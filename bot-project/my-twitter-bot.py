@@ -3,6 +3,9 @@
 #ファイル書き込みもしたい
 #herokuに任せたい
 
+#bot: python bot-project/my-twitter-bot.py        #Procfile
+
+
 from crontab import CronTab
 from datetime import datetime, timedelta
 import logging
@@ -20,9 +23,9 @@ auth = twitter.OAuth(
         #consumer_secret     = myconf.consumer_secret,
         #token    = myconf.token,
         #token_secret = myconf.token_secret,
-        consumer_key        = os.getenv("consumer_key"),
-        consumer_secret     = os.getenv("consumer_secret"),
-        token    = os.getenv("token"),
+        consumer_key = os.getenv("consumer_key"),
+        consumer_secret = os.getenv("consumer_secret"),
+        token = os.getenv("token"),
         token_secret = os.getenv("token_secret"),
         )
 t = twitter.Twitter(auth=auth)
