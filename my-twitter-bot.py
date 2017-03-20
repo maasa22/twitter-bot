@@ -1,6 +1,7 @@
 #coding: utf-8
-#今の天気をtwitterで呟く、Herokuにやらせる方が良いかも
+#天気速報Bot 
 #ファイル書き込みもしたい
+#herokuに任せたい
 
 from crontab import CronTab
 from datetime import datetime, timedelta
