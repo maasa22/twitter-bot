@@ -4,6 +4,7 @@
 #herokuに任せたい
 
 #bot: python bot-project/my-twitter-bot.py        #Procfile
+#web: python bot-project\my-twitter-bot.py runserver 0.0.0.0:$PORT
 
 
 from crontab import CronTab
@@ -23,15 +24,16 @@ auth = twitter.OAuth(
         #consumer_secret     = myconf.consumer_secret,
         #token    = myconf.token,
         #token_secret = myconf.token_secret,
-        consumer_key = os.getenv("consumer_key"),
-        consumer_secret = os.getenv("consumer_secret"),
-        token = os.getenv("token"),
-        token_secret = os.getenv("token_secret"),
+        #consumer_key = os.getenv("consumer_key"),
+        consumer_key = os.environ["consumer_key"],
+        consumer_secret = os.environ["consumer_secret"],
+        token = os.environ["token"],
+        token_secret = os.environ["token_secret"],
         )
 t = twitter.Twitter(auth=auth)
 
 #weather_apikey = myconf.weather_apikey
-weather_apikey = os.getenv("weather_apikey")
+weather_apikey = os.environ["weather_apikey"]
 cities = ["Tokyo,JP"]
 weather_api = "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}"
 k2c = lambda k: k - 273.15 #温度変換
