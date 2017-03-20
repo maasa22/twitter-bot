@@ -1,5 +1,5 @@
 #coding: utf-8
-#天気速報Bot 
+#天気速報Bot
 #ファイル書き込みもしたい
 #herokuに任せたい
 
@@ -13,16 +13,22 @@ import requests
 import json
 import twitter
 import myconf
+import os
 
 auth = twitter.OAuth(
-        consumer_key        = myconf.consumer_key,
-        consumer_secret     = myconf.consumer_secret,
-        token    = myconf.token,
-        token_secret = myconf.token_secret,
+        #consumer_key        = myconf.consumer_key,
+        #consumer_secret     = myconf.consumer_secret,
+        #token    = myconf.token,
+        #token_secret = myconf.token_secret,
+        consumer_key        = os.getenv("consumer_key"),
+        consumer_secret     = os.getenv("consumer_secret"),
+        token    = os.getenv("token"),
+        token_secret = os.getenv("token_secret"),
         )
 t = twitter.Twitter(auth=auth)
 
-weather_apikey = myconf.weather_apikey
+#weather_apikey = myconf.weather_apikey
+weather_apikey = os.getenv("weather_apikey")
 cities = ["Tokyo,JP"]
 weather_api = "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}"
 k2c = lambda k: k - 273.15 #温度変換
