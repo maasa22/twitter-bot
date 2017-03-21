@@ -1,4 +1,5 @@
 # twitter-bot
+自分用備忘録
 herokuで実行しているのは、twitter-bot-no-repeat.py。これを、heroku schedulerで定期実行している。
 環境変数をherokuに設定しており、そこから読み込んでいる。
 
