@@ -1,6 +1,6 @@
 # twitter-bot
 ### 概要
-1時間に1回、東京の天気予報をつぶやくbot。
+1時間に1回東京の天気を、1日に1回東京の天気予報をつぶやくbot。
 https://twitter.com/WeatherBot22
 
 ### プログラムの動き
